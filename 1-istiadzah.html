@@ -1,0 +1,654 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1. Isti&#x27;adzah</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c6f65b5f-3dc4-47fe-abf8-a9babb83901c" class="page sans"><header><h1 class="page-title">1. Isti&#x27;adzah</h1></header><div class="page-body"><h2 id="7c72ff81-8d49-4544-9880-f0669c1730a3" class=""><em>Ath-Thabari</em></h2><p id="62962bf8-4e10-4ba8-9c3d-0ff8a4e7d357" class="">Menurut Ath-Thabari makna dari ta’awudz/isti’adzah adalah aku berlindung kepada Allah dari godaan setan yang terkutuk yang hendak mencelakakanku dalam agama atau memalingkanku dari kebenaran yang ditetapkan Tuhan atasku. Setan dalam perkataan Arab berarti segala yang membangkang dari jenis jin, manusia, binatang, atau yang lainnya.</p><p id="f401816b-f0bd-4cb7-a119-e6312f698d35" class="">Diriwayatkan dari Ibnu Abbas, bahwa ilmu pertama yang diajarkan Jibril kepada Rasulullah ﷺ adalah isti’adzah.</p><p id="bf2a5e62-caad-4888-a823-305c0ac22064" class="">Abdullah bin Abbas berkata: Yang pertama diturunkan dari Jibril kepada Muhammad adalah dia berkata “Wahai Muhammad, berlindunglah! Ucapkanlah, ‘Aku berlindung kepada Dzat Yang Maha Mendengar lagi Maha Mengetahui dari setan yang terkutuk’.” Kemudian dia berkata, “Ucapkanlah, ‘Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang’, kemudian ucapkanlah,
+‘اِقْرَأْ بِاسْمِ رَبِّكَ الَّذِىْ خَلَقَ’ (artinya: ‘Bacalah dengan (menyebut) nama Tuhanmu Yang Menciptakan’).”(QS. Al ‘Alaq [96]: 1).</p><p id="aa22e552-1567-48af-a099-55cc796d858d" class="">
+</p><h2 id="4e076e99-febf-4d83-a8a1-14e266bc1a99" class=""><em>Al-Qurthubi</em></h2><p id="110349da-e45f-4087-a858-0713dfab5f88" class="">Menurut pendapat mayoritas ulama, membaca ta&#x27;awudz ini merupakan perintah yang sunnah setiap akan membaca Al-Qur&#x27;an di luar shalat. Namun mereka berbeda pendapat tentang ta&#x27;awudz di dalam shalat. </p><p id="2ab0278d-5b5f-4e50-bffe-0855c5b8dad7" class="">Ibnu Sirin dan An-Nakha&#x27;i berpendapat wajib dalam setiap raka&#x27;at, Abu Hanifah dan Syafi&#x27;i berpendapat hanya dibaca sekali di raka&#x27;at pertama karena bacaan shalat adalah bacaan yang satu, sedangkan Imam Malik berpendapat bahwa ta&#x27;awudz tidak dibaca dalam shalat fardhu, tetapi dibaca pada ibadah bulan Ramadhan.</p><p id="05b31879-3c01-4f42-9738-15dd0abd5b24" class="">Para ulama sepakat bahwa ta&#x27;awudz bukan merupakan bagian dari Al-Qur&#x27;an. Ta&#x27;awudz adalah ucapan orang yang akan membaca Al-Qur&#x27;an.</p><p id="f6394b56-169f-41e6-ae74-b73767fa0794" class="">Diriwayatkan dari Ibnu Mas&#x27;ud, dia berkata: &quot;Aku berkata, أَعُوْذُ بِاللهِ السَّمِيْعِ الْعَلِيْمِ مِنَ الشَّيْطَانِ الرَّجِيْمِ &#x27;Aku berlindung kepada Allah yang Maha Mendengar lagi Maha Mengetahui dari setan yang terkutuk.&#x27; Rasulullah kemudian bersabda kepadaku, &#x27;Wahai Ibnu Ummi Abd (katakanlah), 
+أَعُوْذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيْمِ &quot;Aku berlindung kepada Allah dari setan yang terkutuk.&quot; Demikianlah Jibril membacakan (ta&#x27;awudz) kepadaku dari Lauh Al Mahfudz, dari Al Qalam.&#x27;&quot;</p><p id="cf94ba0f-4030-4d72-800e-cbae7ecb3993" class="">Para qari&#x27; sepakat untuk mengeraskan bacaan ta&#x27;awudz ketika mulai membaca surah Al Fatihah, kecuali Hamzah, agar menyamarkannya. As-Sudda meriwayatkan dari penduduk Madinah, bahwa mereka mulai membaca (surah) Al-Qur&#x27;an dengan basmalah. Namun, Abu Al-Laits As-Samarqandi menyebutkan dari sebagian mufassir bahwa ta&#x27;awudz adalah suatu hal yang fardhu. </p><p id="85b4278b-ef36-4f6d-bd44-8edae61b8895" class="">Para mufassir Hijaz dan Irak berpendapat apabila orang yang sedang membaca surah Al-Qur&#x27;an lupa membaca ta&#x27;awudz, kemudian mengingatnya pada beberapa hizb, maka hendaklah dia berhenti lalu membaca ta&#x27;awudz. Setelah itu dia membaca surah tersebut dari awal. Namun mufassir Syam dan Mesir berpendapat bahwa dia harus membaca ta&#x27;awudz dan tidak perlu mengulang bacaan, tetapi melanjutkan bacaannya dari tempat dia berhenti tadi.</p><p id="57763aa5-374d-4493-a36e-733c19d7bba4" class="">Al-A&#x27;masy meriwayatkan dari Abu Wa&#x27;il, dari Abdullah dia berkata: Ali bin Abu Thalib berkata, &quot;Aku pernah melihat Nabi ﷺ sedang menghadap kepada seseorang yang berbentuk gajah. Dan ketika itu beliau melaknatnya. Aku bertanya, &#x27;Siapa yang engkau laknat itu, wahai Rasulullah?&#x27; Beliau menjawab, &#x27;ia adalah setan yang terkutuk.&#x27; Aku berkata (kepada setan), &#x27;Wahai musuh Allah, sesungguhnya aku akan membunuhmu dan aku akan menentramkan umat (Islam) dari (godaan)mu.&#x27; Dia (setan) berkata, &#x27;Ini bukanlah hukuman yang akan aku terima darimu.&#x27; Aku berkata, &#x27;Lalu apa hukuman yang akan engkau terima dariku?&#x27; Dia menjawab, &#x27;Demi Allah, tidak akan pernah ada seorang pun yang membencimu, melainkan aku telah bersama ayah orang itu di dalam rahim ibunya&#x27;.&quot;</p><p id="c3f60fb0-f3bc-4898-b848-4b8e341481e2" class="">
+</p><h2 id="76bde24e-4d05-4ed8-b923-e59e6d7e6422" class=""><em>Ibnu Katsir</em></h2><p id="31e5d82e-aca1-4f31-8875-aacb40dd6dcf" class="">Allah ﷻ berfirman:</p><p id="cd4ab60f-3b83-4198-8987-12422df681c1" class=""> فَإِذَا قَرَأْتَ الْقُرْآنَ فَاسْتَعِذْ بِاللّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ إِنَّهُ لَيْسَ لَهُ سُلْطَانٌ عَلَى الَّذِيْنَ ءَامَنُوْا وَعَلَى رَبِّهِمْ يَتَوَكَّلُوْنَ إِِنَّمَا سُلْطَانُهُ عَلَى الَّذِيْنَ يَتَوَلَّوْنَهُ وَالَّذِيْنَ هُمْ بِهِ مُشْرِكُوْنَ </p><p id="ba56b9ff-00a7-4631-82ae-d8ed2239eed1" class="">“<em>Apabila kamu membaca Al Qur’an, hendaklah kamu meminta perlindungan kepada Allah dari setan yang terkutuk. Sesungguhnya setan itu tidak memiliki kekuasaan atas orang-orang yang beriman dan bertawakal kepada Rabbnya. Sesungguhnya kekuasannya (setan) itu hanyalah atas orang-orang yang mengambilnya menjadi pemimpin dan atas orang-orang yang mempersekutukannya dengan Allah.</em>” (QS. An-Nahl [16] : 98-100)</p><p id="f6a46e42-f78e-4c40-ab65-af4bbe51e3ea" class="">Yang masyhur menurut jumhur ulama bahwa isti&#x27;adzah dilakukan sebelum membaca Al-Qur&#x27;an guna mengusir godaan setan. Menurut mereka, ayat 98 di An-Nahl artinya jika kamu hendak membaca (Al-Qur&#x27;an). Sebagaimana dalam surat Al-Maa&#x27;idah ayat 6:
+إِذَا قُمۡتُمۡ إِلَى ٱلصَّلَوٰةِ فَٱغْسِلُواْ وُجُوهَكُمۡ وَأَيْدِيَكُمۡ</p><p id="b2565f1b-138e-4553-a2c0-79e55eaf1b29" class=""><em>&quot;Jika kamu mendirikan shalat, maka basuhlah wajah dan kedua tanganmu...&quot; </em>(QS. Al-Maa&#x27;idah [5]: 6)
+artinya jika kalian hendak mendirikan shalat.</p><p id="305bb16a-0921-4cd4-9f3e-84900335af1d" class="">
+</p><p id="16798ed0-37f1-40a0-aed9-a555a5773312" class="">Jumhur ulama berpendapat bahwa isti&#x27;adzah itu sunnah hukumnya, bukan wajib yang bila ditinggalkan maka berdosa. Diriwayatkan dari Imam Malik, bahwasanya ia tidak membaca ta&#x27;awudz dalam shalat wajib.</p><p id="2f200ca4-6e1e-48fd-a533-a584b30124b7" class="">Dalam kitab al-Imla&#x27;, Imam asy-Syafi&#x27;i mengatakan: &quot;Dianjurkan mengeraskan bacaan ta&#x27;awudz. Tetapi jika ia dibaca perlahan juga tidak apa-apa.&quot; Sedangkan dalam kitab al-Umm, beliau mengatakan: &quot;Boleh memilih antara membaca ta&#x27;awudz secara jahr ataupun sirr. Menurut beliau juga, jika seseorang membaca ta&#x27;awudz dengan lafazh: &quot;أَعُوْذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيْمِ&quot;, maka itu sudah cukup baginya.</p><p id="a7329860-1719-46dc-9cbc-b2c37cf2deec" class="">Menurut Abu Hanifah dan Muhammad Asy-Syaibani, ta&#x27;awudz yang dibaca di dalam shalat adalah sama seperti ta&#x27;awudz untuk membaca al-Qur&#x27;an. Sedangkan Abu Yusuf berpendapat bahwa ta&#x27;awudz itu justru dibaca untuk mengerjakan shalat.</p><p id="c0dd0ca6-e6ad-45b3-a746-9d3b6863d8e0" class="">Menurut jumhur ulama, ta&#x27;awudz dalam shalat Ied dibaca setelah selesai seluruh takbir, yaitu sebelum membaca al-Fatihah.</p><p id="3e61ce16-dc59-4b0b-92dc-4262d30a4fe1" class="">
+</p><p id="6ac4c3b2-562a-4bee-97d3-8685f7b708a3" class="">Di antara manfaat ta&#x27;awudz adalah untuk menyucikan mulut dari kata-kata yang tidak bermanfaat dan buruk. Ta&#x27;awudz ini dibaca sebelum membaca firman Allah. Ia merupakan bentuk memohon pertolongan kepada Allah sekaligus pengakuan atas kekuasaan-Nya, dan kelemahan serta ketidakberdayaan hamba dalam melawan musuh yang sesungguhnya ini (setan), yang tidak tampak, yang tak seorang pun mampu menolak dan mengusirnya kecuali Allah yang telah menciptakannya.</p><p id="ad04d198-fe45-43bf-88e5-f7ec6f85ca66" class="">Karena setan dapat melihat manusia, sedangkan manusia tidak dapat melihatnya, maka seseorang memohon perlindungan kepada Rabb yang melihat setan, sedang setan itu tidak melihat-Nya.</p><p id="0783c083-826d-4414-9162-0162e58ff88e" class="">
+</p><p id="7f4420d8-361b-4f6c-8e24-a13b19499ebf" class="">Isti&#x27;adzah berarti memohon perlindungan kepada Allah dari kejahatan setiap yang jahat. Kata الْإسْتِعَاذَةُ menunjukkan (permohonan pertolongan) dalam usaha menolak kejahatan. Adapun makna
+أَعُوْذُ بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيْمِ adalah, aku memohon perlindungan kepada Allah dari setan yang terkutuk agar ia tidak membahayakan diriku dalam urusan agama dan duniaku. Atau menghalangiku untuk mengerjakan apa yang telah Dia perintahkan dan menyuruhku mengerjakan apa yang Dia larang, karena tidak ada yang mampu mencegah godaan setan itu kecuali Allah.</p><p id="427eda99-f884-4429-b4af-dc9615a14b10" class="">Oleh karena itu Allah ﷻ memerintahkan manusia agar menarik dan membujuk hati setan dari golongan manusia dengan cara menyodorkan sesuatu yang baik kepadanya agar terhindar dari kejahatannya. Sedangkan untuk setan dari golongan jin, Allah memerintahkan untuk memohon perlindungan kepada-Nya. Karena mereka tidak menerima pemberian dan tidak dapat dipengaruhi dengan kebaikan. Tabiat mereka jahat dan tidak ada yang dapat mencegahnya dari dirimu kecuali Rabb yang menciptakannya. Dalilnya ada dalam tiga ayat Al-Qur&#x27;an, yaitu Al-A&#x27;raaf: 200, Al-Mu&#x27;minuun: 96-98, dan Fushshilat: 34-36. </p><p id="6c4b7480-949d-4660-ac2c-4f531dbb5388" class="">Dalam kitab Musnad<em> </em>Imam Ahmad, disebutkan hadits dari Abu Dzar, bahwa Rasulullah ﷺ bersabda:</p><p id="b45955bb-0bba-491e-b882-72d9d49190ba" class="">&quot;Wahai Abu Dzar, mohonlah perlindungan kepada Allah dari setan-setan jenis manusia dan jin.&quot; Lalu aku bertanya: &quot;Apakah ada setan dari jenis manusia?&quot; &quot;Ya&quot;, jawab beliau.</p><p id="49b054d2-0fec-451e-8b9e-2a91547ac1e7" class="">Sedangkan dalam Shahih Muslim diriwayatkan dari Abu Dzar, dia berkata: &quot;Rasulullah ﷺ bersabda: &#x27;Yang dapat membatalkan shalat itu adalah wanita, keledai, dan anjing hitam.&#x27; Kemudian kutanyakan: &#x27;Ya Rasulullah, mengapa anjing hitam dan bukan anjing merah atau kuning?&#x27; Beliau menjawab: &#x27;Anjing hitam itu adalah setan.&#x27;&quot;</p><p id="551d2295-f109-48c1-9035-7f3c8d4ec79f" class="">
+</p><h2 id="7feaa7d8-cf0f-4521-bf12-0b88dcfd3938" class=""><em>Hikmah</em></h2><p id="59a1204f-0c5b-4f2b-b39b-f6cae3cc1133" class="">1. Apa hikmah dari Allah ﷻ mengajarkan kita untuk beristi’adzah sebelum membaca Al Quran? Mengapa kalimat ini dan bukan kalimat yang lain? Misalnya sebagaimana kebiasaan manusia ketika berbicara di depan umum dan diantara hadirin ada seorang yang dihormati oleh seluruh hadirin lainnya, maka pujian dan penghormatan kepada orang yang dihormati itu adalah hal yang kali pertama diucapkan. Seandainya Allah ﷻ menginginkan, maka Dia dapat menyuruh manusia untuk mengagungkan-Nya sebelum manusia membaca kalimat-Nya. Tetapi kenapa Allah ﷻ malah menyuruh manusia untuk berlindung dari setan?</p><p id="684f0a82-3ac2-4863-b3ba-49cc00bb2e3d" class="">Jawaban:</p><ul id="634cfbc1-a555-4d54-9b19-fc1345998057" class="bulleted-list"><li>Menunjukkan sifat Allah yang Maha Penyayang kepada manusia bahkan sebelum manusia itu membaca dan mendengarkan kalam-Nya. Sebagaimana jika seorang bapak yang sangat menyayangi anaknya, ketika anaknya berada dalam ancaman dan bahaya, maka yang dengan cepat keluar dari lisan Sang Bapak adalah “Nak, awas!” atau “Nak, hati-hati!” sebelum dia berkata yang lainnya.</li></ul><ul id="e4219163-4396-4656-93fc-3b6cbdcecc22" class="bulleted-list"><li>Mengingatkan manusia bahwa setan adalah makhluk yang terkutuk yang selalu dapat mencelakakan manusia. Dan pelindung yang dapat manusia andalkan terhadap ancaman ini hanyalah Allah ﷻ.</li></ul><p id="60eb7232-19d0-4dd3-9247-7ab17dfab64a" class="">
+</p><p id="45f3a8ad-f149-49cc-b9b9-ce3652a989ca" class="">2. Mengapa Allah mendahulukan Dzat-Nya dalam kalimat isti’adzah daripada ancaman setan?</p><p id="2f1c762a-7120-4d99-8925-58b3a1820537" class="">Mengapa tidak diucapkan dalam bentuk “Aku berlindung dari setan yang terkutuk kepada Allah”?</p><p id="f819ea4a-502d-4927-b124-a645f98983de" class="">Jawaban:</p><p id="130f2000-76ee-463d-91e8-0486306e2477" class="">Coba kita bandingkan dan rasakan makna kedua kalimat ini:</p><p id="566c839d-f3ba-4056-9b7a-09ffffc00574" class=""><em>“Aku berlindung kepada Allah dari setan yang terkutuk”.</em></p><p id="a3dc5936-0576-4ddd-86d2-afefff02548b" class=""><em>“Aku berlindung dari setan yang terkutuk kepada Allah”.</em></p><p id="c0167a85-a6ca-4136-bb57-321e52b7706f" class="">Walaupun maksudnya sama, tapi sebagaimana yang dapat kita rasakan, ada kejanggalan jika diutarakan dalam bentuk yang kedua. Dalam kalimat kedua makna yang hadir adalah bahwa aku sangat takut kepada setan (makanya didahulukan), maka aku berlindung kepada Allah. Adapun hikmah dari susunan kalimat yang pertama yaitu aku percaya bahwa perlindungan Allah ﷻ sangat mampu mengatasi ancaman setan yang terkutuk dan ancaman setan itu tidak ada apa-apanya dibandingkan dengan kekuasaan Allah ﷻ.</p><p id="3a16c21a-3acc-4f86-a430-65be5f27dbd9" class="">
+</p><p id="7ec6d02d-d0b3-479b-a2fe-6c37dcb1f214" class="">3. Kapan saja kita harus membaca isti’adzah?</p><ul id="8a7f9101-e718-4d7d-be3a-4cd35b52fe98" class="bulleted-list"><li>Sebelum membaca Al Quran<p id="6daa2eef-6d25-496e-bde2-264076705e92" class="">فَإِذَا قَرَأْتَ الْقُرْآنَ فَاسْتَعِذْ بِاللّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ</p><p id="910fe257-1ff3-4c23-9db5-329300fd1d74" class="">“<em>Apabila kamu membaca Al Qur’an, hendaklah kamu meminta perlindungan kepada Allah dari setan yang terkutuk</em>” (QS. An-Nahl :16 98)</p><p id="57c07390-3f80-4f42-91d2-2504dafd6957" class="">Al-Jashash <em>Rahimahullahu ta’ala</em> berkata: “Ayat di atas secara dzahirnya seolah-olah isti&#x27;adzah dibaca setelah membaca al-Qur’an karena memakai <em>fi’il madhi</em>, namun telah valid dari Rasulullah dan ulama Salaf dahulu bahwa membaca Istiadzah dilakukan sebelum membaca al-Qur’an. (<em>Ahkamul Qur’an, 3/282).</em></p><p id="b13522ee-1b73-4ae6-aab5-fb7789c8528c" class="">
+</p></li></ul><ul id="b551f0f0-a5fc-4762-9078-f0eb66346c73" class="bulleted-list"><li>Di dalam shalat sebelum membaca Al Fatihah<p id="f96e1046-f92b-4fdd-98c3-ba35de1f44f3" class="">قَالَ أَبُو سَلَمَةَ رَضِيَ اللهُ عَنْهُ : كَانَ رَسُوْلُ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ إِذَا قَامَ مِنَ اللَّيْلِ يَقُوْلُ: اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الشَّيْطَانِ الرَّجِيْمِ مِنْ هَمْزِهِ وَنَفْثِهِ وَنَفْخِهِ</p><p id="1bdd663d-0230-4098-9eb2-c71d6e11d39f" class=""><em>Abu Salamah Radhiyallahu ‘anhu berkata: “Rasulullah </em>ﷺ <em>apabila shalat pada malam hari beliau berdoa: Ya Allah, sesungguhnya Aku berlindung kepada-Mu Yang Maha Mendengar lagi Maha Mengetahui dari syaitan yang terkutuk berupa kesombongan, tiupan, dan bisikannya.</em> (HR. Ahmad, Ibnu Hibban dan Ibnu Bai Syaibah).</p><p id="ddf70334-dd4d-46c9-898b-75aaadec54f7" class="">Abu Sai&#x27;d Al Khudri meriwayatkan bahwa Nabi ﷺ selalu membaca ta&#x27;awudz di dalam shalatnya sebelum (beliau) membaca Al-Qur&#x27;an. Ini merupakan nash.</p></li></ul><p id="4c222758-4faf-47d9-b6f0-e0dbaf9d5cf4" class="">
+</p><ul id="dd2e635f-c3fe-4af1-bbf1-d034edc623d3" class="bulleted-list"><li>Ketika marah<p id="ad295e35-9b53-420d-a94b-0b9e077fdfbe" class="">عَنْ سُلَيْمَانَ بْنِ صُرَدٍ رَضِيَ اللهُ عَنْهُ قَالَ : كَنْتُ جَالِسًا مَعَ النَّبِيِّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ وَرَجُلَانِ يَسْتَبَّانِ فَأَحَدُهُمَا احْمَرَّ وَجْهُهُ وَانْتَفَخَتْ أَوْدَاجُهُ فَقَالَ النَّبِيُّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: إِنِّي لَأَعْلَمُ كَلِمَةً لَوْ قَالَهَا ذَهَبَ عَنْهُ مَا يَجِدُ لَوْ قَالَ أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ ذَهَبَ عَنْهُ مَا يَجِدُ. فَقَالُوا لَهُ : إِنَّ النَّبِيَّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ قَالَ: تَعَوَّذْ بِاللَّهِ مِنَ الشَّيْطَانِ</p><p id="c3dec7d1-94e7-4c77-ae01-06c3b6d5aa9c" class=""><em>Dari Sulaiman bin Shurad Radhiyallahu ‘anhu berkata: “Pada suatu hari aku duduk bersama-sama Nabi </em>ﷺ <em>sedang dua orang lelaki sedang saling mengeluarkan kata-kata kotor satu dan lainnya. Salah seorang mereka telah merah mukanya dan tegang pula urat lehernya. Lalu Rasulullah </em>ﷺ<em> bersabda, “Sesungguhnya aku tahu satu perkataan sekiranya dibaca tentu hilang rasa marahnya jika sekiranya ia mau membaca, ‘A’udzubillahi minas-syaitani’ (Aku berlindung kepada Allah dari godaan setan), niscaya hilang kemarahan yang dialaminya.”</em> (HR Bukhari, no. 3282)</p><p id="0c8e1304-2bfb-47ac-a003-3427a52e10c4" class="">
+</p></li></ul><ul id="b382cf4e-bc3a-4cb9-be39-69cdfa28c167" class="bulleted-list"><li>Ketika hendak masuk WC<p id="a2e09b28-c6b5-4a82-9dac-6064e545c032" class="">عَنْ أَنَسٍ رَضِيَ اللهُ عَنْهُ قَالَ: كَانَ النَّبِيُّ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ إِذَا دَخَلَ الْخَلَاءَ قَالَ:(بِسْمِ اللهِ) اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ من الْخُبُثِ وَالْخَبَائِثِ</p><p id="a8883ddf-d318-40f7-9444-f335ca5f2938" class=""><em>Dari Anas bin Malik Radhiyallahu ‘anhu, Nabi </em>ﷺ <em>apabila hendak masuk WC, beliau berdoa: “Dengan menyebut nama Allah. Ya Allah, aku berlindung kepada-Mu dari syaitan laki-laki dan syaitan perempuan.”</em> (HR. Bukhari 142 dan Muslim 375).</p><p id="5626f13a-2d65-49ab-aad1-e98ab0921a6a" class="">
+</p></li></ul><ul id="3597b45b-2245-42e0-b304-e0da14996e5f" class="bulleted-list"><li>Sebelum berhubungan badan dengan suami/istri<p id="aeb4f876-c204-425c-8114-e18ed09a309f" class="">Sebagaimana tercantum dalam riwayat Ali bin Abi Thalib bertemu dengan setan yang telah dikemukakan sebelumnya, salah satu maksud dari perkataan setan tersebut adalah setan akan menanamkan kebencian kepada sang anak terhadap kebaikan atau kebencian terhadap orang baik, jika ayahnya tidak berlindung dari setan saat melakukan hubungan badan dengan ibunya.</p><p id="a342f620-2abc-4bae-8d19-25b019c90703" class="">
+</p><p id="183b3795-5a19-4a5b-b811-ac0098f9e0b5" class="">Dari Ibnu ‘Abbas <em>radhiyallahu ‘anhuma</em>, ia berkata bahwa Rasulullah <em>shallallahu ‘alaihi wa sallam </em>bersabda,</p><p id="ef1ca13f-512d-4dd9-942a-66264fd98031" class="">« لَوْ أَنَّ أَحَدَكُمْ إِذَا أَرَادَ أَنْ يَأْتِىَ أَهْلَهُ فَقَالَ بِاسْمِ اللَّهِ ، اللَّهُمَّ جَنِّبْنَا الشَّيْطَانَ ، وَجَنِّبِ الشَّيْطَانَ مَا رَزَقْتَنَا . فَإِنَّهُ إِنْ يُقَدَّرْ بَيْنَهُمَا وَلَدٌ فِى ذَلِكَ لَمْ يَضُرُّهُ شَيْطَانٌ أَبَدًا</p><p id="ff1d7bb1-9f82-4d36-8372-6e6d38d9b3f5" class="">“<em>Jika salah seorang dari kalian (yaitu suami) ingin berhubungan intim dengan istrinya, lalu ia membaca do’a: [</em><em><strong>Bismillah Allahumma jannibnaasy syaithoona wa jannibisy syaithoona maa rozaqtanaa</strong></em><em>], “Dengan (menyebut) nama Allah, ya Allah jauhkanlah kami dari (gangguan) setan dan jauhkanlah setan dari rezki yang Engkau anugerahkan kepada kami”, kemudian jika Allah menakdirkan (lahirnya) anak dari hubungan intim tersebut, maka setan tidak akan bisa mencelakakan anak tersebut selamanya</em>” (HR. Bukhari no. 6388 dan Muslim no. 1434).</p><p id="75e1bf05-f863-4145-8da5-8da6ae0e0f85" class="">
+</p><p id="8863d45b-45d9-4109-82d7-b1fa7f6fea22" class="">Syaikh Ibnu Baz memahami bahwa yang dimaksud dalam hadits bahwa anak tersebut akan tetap berada di atas fithroh yaitu Islam. Setan bisa saja menggoda anak tersebut, namun segera ia akan kembali ke jalan yang lurus. Sebagaimana Allah <em>Ta’ala</em> berfirman,</p><p id="c5ee38da-f521-4751-ae71-bb53b8f6535c" class="">إِنَّ الَّذِينَ اتَّقَوْا إِذَا مَسَّهُمْ طَائِفٌ مِنَ الشَّيْطَانِ تَذَكَّرُوا فَإِذَا هُمْ مُبْصِرُونَ</p><p id="2361d648-a466-46ad-80e9-d08567d3a432" class="">“<em>Sesungguhnya orang-orang yang bertakwa bila mereka ditimpa was-was dari syaitan, mereka ingat kepada Allah, maka ketika itu juga mereka melihat kesalahan-kesalahannya</em>” (QS. Al A’raf: 201)</p></li></ul><p id="854a937a-11c2-4165-bd69-f53b9fe61a71" class="">
+</p><ul id="fdfe6de5-a914-4cca-b8d3-19c66169682c" class="bulleted-list"><li>Ketika mendengar gonggongan anjing dan ringkikan kedelai<p id="fe8f49db-a194-4eb8-8095-2eab6746e0a7" class="">عَنْ جَابِرِ بْنِ عَبْدِ اللهِ رَضِيَ اللهُ عَنْهُمَا قَالَ : قَالَ رَسُوْلُ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ: إِذَا سَمِعْتُمْ نَبَاحَ الْكِلَابِ وَنَهِيْقَ الْحَمِيْرِ مِنَ اللَّيْلِ فَتَعَوَّذُوا بِاللهِ مِنَ الشَّيْطَانِ الرَّجِيْمِ فَإِنَّهَا تَرَى مَا لَا تَرَوْنَ</p><p id="7fa9d6be-fcfa-4cd3-bc2a-9aafb7c36280" class=""><em>Dari Jabir bin Abdillah Radhiyallahu ‘anhuma, Rasulullah </em>ﷺ <em>bersabda: “Apabila kalian mendengar gonggongan anjing dan ringkikan keledai pada malam hari, maka mintalah perlindungan (ta’awwudz) kepada Allah, karena mereka melihat sesuatu yang tidak kalian lihat.”</em> (HR. Bukhari 1234, Ahmad 355, Abu Dawud, 4/327).</p></li></ul><p id="eb9d77f4-a40e-4314-809a-925a41c98238" class="">
+</p><ul id="f9fb386f-65ca-4f7b-a440-29406a37c672" class="bulleted-list"><li>Dalam kondisi ketakutan<p id="072d3eda-8655-4677-8bad-511375214e0c" class="">عَنْ عَبْدِ اللهِ بْنِ عَمْرٍو رَضِيَ اللهُ عَنْهُمَا قَالَ : كَانَ رَسُوْلُ اللهِ صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ يُعَلِّمُهُمْ مِنَ الْفَزَعِ كَلِمَاتٍ: بِاسْمِ اللهِ أَعُوْذِ بِكَلِمَاتِ اللهِ التَّامَّةِ مِنْ غَضْبِهِ وَعِقَابِهِ وَشَرِّ عِبَادِهِ وَمِنْ هَمَزَاتِ الشَّيَاطِيْنِ وَأَن يَحْضُرُوْنِ )</p><p id="9f5ff608-fcd3-4ce9-bcd2-b06df5fc5388" class=""><em>Dari Abdullah bin Amr Radhiyallahu ‘anhuma, Rasulullah </em>ﷺ <em>bersabda: “Aku berlindung dengan kalimat Allah yang sempurna dari kemarahan-Nya, dari kejahatan hamba-hamba-Nya, dan dari bisikan-bisikan setan dan dari kedatangan mereka kepadaku”. </em>(HR. Ahmad no. 6696, an-Nasa’i no. 10601, at-Tirmizi no. 3662 dan Hakim 1/733).</p></li></ul><p id="520d70e2-19d4-4b03-b79c-e82b3ffb4e63" class="">
+</p><ul id="a31b3cfd-f055-4443-a1f6-ef1e914f8e69" class="bulleted-list"><li>Ketika meruqyah<p id="456f0d55-569b-445a-808b-c623b788ec97" class="">عَنِ ابن عَبَّاسٍ رضي الله عنهما أن رَسُولَ اللَّهِ صلى الله عليه وسلم كان يُعَوِّذُ حَسَناً وَحُسَيْناً يقول ( أُعِيذُكُمَا بِكَلِمَاتِ اللَّهِ التَّامَّةِ من كل شَيْطَانٍ وَهَامَّةٍ وَمِنْ كل عَيْنٍ لاَمَّةٍ )</p><p id="7a90f444-ac6e-46bc-bc3c-565236d4a90c" class=""><em>Dari Ibnu Abbas Radhiyallahu ‘Anhuma, adalah Rasulullah </em>ﷺ <em>memohon perlindungan untuk Hasan dan Husain, lalu ia berdo’a:  “Aku memohon perlindungan dengan kalimat-kalimat Allah yang sempurna, dari semua godaan setan dan binatang pengganggu serta dari pandangan mata buruk.</em> (HR. Abu Daud 3371, dan dishahihkan al-Albani).</p><p id="1a7e4665-9582-4a48-ac03-06890ab8751a" class="">
+</p></li></ul><ul id="4aa952f7-41d7-4a77-acb7-d849a3271db3" class="bulleted-list"><li>Ketika hendak masuk masjid<p id="09b7c3e6-cb45-4877-93ee-e1ec7268c124" class="">عن عبد اللَّهِ بن عَمْرِو بن الْعَاصِ رضي الله عنهما عن النبي صلى الله عليه وسلم أَنَّهُ كان إذا دخل الْمَسْجِدَ قال ( أَعُوذُ بِاللَّهِ الْعَظِيمِ وَبِوَجْهِهِ الْكَرِيمِ وَسُلْطَانِهِ الْقَدِيمِ من الشَّيْطَانِ الرَّجِيمِ ) قال أَقَطْ قلت نعم قال ( فإذا قال ذلك قال الشَّيْطَانُ حُفِظَ مِنِّي سَائِرَ الْيَوْمِ )</p><p id="67017a54-d6fd-4328-85b0-b116c9cd63b7" class=""><em>Dari Abdullah bin Amr Radhiallahu Anhuma, Rasulullah </em>ﷺ <em>bersabda: “Bahwasanya beliau apabila masuk ke masjid maka beliau membaca, “Audzu Billahil Azhim Wa</em> <em>Bi Wajhihil Karim Wa Sulthanihil Qadim Minasy Syaithanir Rajim (aku berlindung kepada Allah yang Maha Agung dan dengan Wajah-Nya yang Maha Mulia dan dengan kekuasaan-Nya yang Qadim (dahulu tidak ada awalnya), dari gangguan setan yang terkutuk).” Dia bertanya (Abdullah bin Amr), “Apakah itu saja?” Aku menjawab (Uqbah bin Muslim), “Ya!” Dia (Abdullah bin Amr) kemudian meneruskan, “Barangsiapa membaca itu, maka setan akan berkata kepadanya, “Dia terjaga dariku sehari ini penuh.”</em> (HR. Abu Daud no. 466 dan sanadnya dinyatakan hasan oleh Ibnu Baz dalam At-Tuhfah hal. 30).</p><p id="d27930d5-0883-4315-ad3b-21c473839fc5" class="">
+</p></li></ul><ul id="a1289140-1346-4cf3-801a-58f43499de59" class="bulleted-list"><li>Ketika was-was dalam shalat<p id="174762bb-9579-4879-b28c-d98a193fa185" class="">عن عثمان بن أبي العاص الثقفي رضي الله عنه أنه أتى النبيّ صلى الله عليه وسلم فقال: يَا رَسُولَ اللّهِ إِنَّ الشَّيْطَانَ قَدْ حَالَ بَيْنِي وَبَيْنَ صَلاَتِي وَقِرَاءَتِي. يَلْبِسُهَا عَلَيَّ. فَقَالَ رَسُولُ اللّهِ صلى الله عليه وسلم : ذَاكَ شَيْطَانٌ يُقَالُ لَهُ خنْزَبٌ . فَإِذَا أَحْسَسْتَهُ فَتَعَوَّذْ بِاللّهِ مِنْهُ. وَاتْفِلْ عَلَىٰ يَسَارِكَ ثَلاَثاً. قَالَ: فَفَعَلْتُ ذٰلِكَ فَأَذْهَبَهُ اللّهُ عَنِّي .</p><p id="70c48f7d-c3c9-4da9-8a7a-84129dcd62e1" class=""><em>Dari Utsman bin Abil Ash ats-Tsaqofy Radhiyallahu ‘Anhu bahwasnya dia datang menemui Nabi </em>ﷺ <em>lalu berkata: “Wahai Rasulullah, sungguh setan telah menghalangi pelaksanaan shalatku, dan mengacaukan bacaanku (maksudnya mencampur adukkan bacaanku dan membuat diriku ragu-ragu).” Lalu Rasulullah</em> ﷺ <em>bersabda, “Itu adalah syetan bernama khanzab, jika kau merasakan kehadirannya maka mohonlah perlindungan Allah dari gangguannya, lalu meludahlah ke samping kiri sebanyak tiga kali.” Utsman pun berkata, “Akupun mengerjakan anjuran itu dan Allah pun menghilangkan gangguan itu dariku.”</em> (HR. Muslim no. 2203).</p><p id="a934525a-fb4d-485b-8f83-066c8642035b" class="">
+</p></li></ul><ul id="b708ab4c-ff28-480b-8885-b1b91687b7ba" class="bulleted-list"><li>Ketika menjelang malam<p id="2b32d64d-dde8-40dc-bf1b-b10c7d4348a3" class="">عن ٱبن عمر رضي الله عنهما قال: كان رسول الله صلى الله عليه وسلم إذا سافر فأقبل عليه الليل قال: يا أرضُ ربّي ورَبّك الله أعوذ بالله مِن شرّك ومن شرّ ما خلق فيك ومن شر ما يَدِبّ عليك ومن أسد وأسْود ومن الحية والعقرب ومن ساكني البلد ووالد وما ولد.</p><p id="e18f3653-6780-419c-8c5c-e59708ab7808" class=""><em>Ibnu Umar Radhiallahu ‘Anhuma menceritakan, bahwa Rasulullah </em>ﷺ <em>jika dalam perjalanan dan datang waktu malam, beliau membaca do’a ini: “Wahai bumi, Rabbku dan Rabbmu adalah Allah, sesungguhnya aku berlindung kepada Allah dari kejahatanmu dan kejahatan apa yang ada di dalammu. Begitu pula dari kejahatan makhluk yang diciptakan di dalammu dan dari kejahatan sesuatu yang merayap di atasmu. Aku berlindung kepada Allah dari kejahatan setiap singa, ular hitam besar, ular, dan kalajengking, serta dari kejahatan penduduk negri ini, dan dari kejahatan orang tua dan anaknya.”</em> (HR. Ahlu Sunan dan Muslim).</p><p id="560a9132-2fbb-41ec-b301-5245f0d34a74" class="">
+</p></li></ul><ul id="de981f2f-e17e-4dbf-af6b-acbd3a88829c" class="bulleted-list"><li>Ketika keluar dari rumah<p id="22f84e54-1e04-494b-b8b1-d381f7dca040" class="">خَوْلة بنت حكيم رضي الله عنها قالت: سمعت رسول الله صلى الله عليه وسلم يقول: مَنْ نَزَلَ مَنْزِلاً ثُمَّ قَالَ : أَعُوذُ بِكَلِمَاتِ اللّهِ التَّامَّةِ مِنْ شَرِّ مَا خَلَقَ، لَمْ يَضُرُّهُ شَيْءٌ، حَتَّىٰ يَرْتَحِلَ مِنْ مَنْزِلِهِ ذٰلِكَ.</p><p id="a5da99f0-2316-4c78-82bb-1eae623ae5d9" class=""><em>Dari Khoulah binti Hakim radhiyallahu ‘anha, Rasulullah </em>ﷺ<em> bersabda: ”Siapa yang memasuki suatu tempat, kemudian dia membaca &#x27;Aku berlindung dengan kalimat Allah yang sempurna dari kejahatan makhluk-Nya&#x27;, maka tidak ada satupun makhluk yang membahayakannya, hingga dia pergi dari tempat itu.</em> (HR. Muslim 2708).</p><p id="4d98cf95-2fed-42ef-9a5f-837aaa29308e" class="">
+</p></li></ul><ul id="95dd74a6-6009-409f-908f-9ca4bcd9e85c" class="bulleted-list"><li>Ketika was-was dan keraguan datang<p id="67f8c3a9-2a3e-48d2-8d73-0b714a267514" class="">قال أبو هريرةَ رضي اللهُ عنه : قال رسولُ اللهِ صلى الله عليه وسلم: يأتي الشيطانُ أحدَكم فيقول: من خَلَقَ كذا ؟ من خَلقَ كذا ؟ حتى يقول: من خَلقَ ربَّك ؟ فإذا بلَغَهُ فَليَسْتعِذْ باللهِ ولْيَنْتَهِ</p><p id="1d8c288d-f4fa-4c80-9569-2975ac8885ca" class=""><em>Dari Abu Hurairah Radhiyallahu ‘Anhu, Rasulullah </em>ﷺ <em>bersabda:</em> <em>“Setan mendatangi salah seorang dari kalian, lalu bertanya, ’Siapakah yang menciptakan ini? Siapakah yang menciptakan itu?’ Hingga dia bertanya, ’Siapakah yang menciptakan Rabb-mu?’ Oleh karena itu, jika telah sampai kepadanya hal tersebut, maka hendaklah dia berlindung kepada Allah dan hendaklah dia menghentikan (was-was tersebut)</em>)”. (HR. Bukhari no. 3206 dan Muslim no. 303).</p><p id="33be9af9-7f77-44ad-b2b4-1e41c894c5bf" class="">
+</p></li></ul><ul id="ca93b6ef-b262-48e6-9cb6-c27fa0a0fe25" class="bulleted-list"><li>Ketika dzikir pagi dan petang<p id="8b41e399-fdc0-44b8-bd1c-1c90d29d4bbb" class="">عَن أبي هُرَيْرَةَ رضي الله عنه قَالَ: قَالَ أبُو بَكْرٍ: يَا رَسُولَ الله مُرْنِي بِشَيْءٍ أَقُولُهُ إذَا أَصْبَحْتُ وَإذَا أَمْسَيْتُ. قَالَ: قُلْ: ( اللَّهُمَّ عَالِمَ الغَيْبِ وَالشّهَادَةِ، فَاطِرَ السَّمَاواتِ والأَرْضِ، رَبَّ كُلِّ شَيءٍ وَمَلِيكَهُ أشْهَدُ أَن لاَ إِله إِلاّ أنْتَ أعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وشِرْكِهِ. قَالَ قُلْهُ إذَا أَصْبَحْتَ وَإذَا أَمْسَيْتَ وإِذَا أخَذْتَ مَضْجَعَكَ )</p><p id="92320a00-5a82-43ec-8f62-33d6c9f1dcae" class=""><em>Dari Abu Hurairah Radhiyallahu Anhu, Abu Bakr bertanya kepada Nabi, Wahai Rasulullah apa yang mesti aku baca ketika aku berada di pagi dan sore hari, maka Nabi berabda: “Ya Allah, Yang Maha Mengetahui yang ghaib dan yang nyata, wahai Rabb pencipta langit dan bumi, Rabb segala sesuatu dan yang merajainya. Aku bersaksi bahwa tidak ada ilah yang berhak disembah kecuali Engkau. Aku berlindung kepadaMu dari kejahatan diriku, setan dan balatentaranya, dan aku (berlindung kepada-Mu) dari berbuat kejelekan terhadap diriku atau menyeretnya kepada seorang muslim.” Bacalah ia ketika pagimu, soremu, dan pergi ke tempat tidurmu.</em> (HR. At Tirmidzi: 3392, Abu Dawud: 5067).</p><p id="0c23adee-ed81-47d4-b146-03970023fabb" class="">
+</p></li></ul><ul id="ddb92df1-4f5e-4d48-b337-e9a74e62c453" class="bulleted-list"><li>Ketika setan membisikan keburukan dan kedustaan<p id="f634eb61-d062-45e7-88ec-efc319cb3e3f" class="">عَن عَبْدِ الله بنِ مَسْعُودٍ رضي الله عنه قالَ: قالَ رسولُ الله صلى الله عليه وسلم : إِنَّ لِلشَّيْطَانِ لَمَّةً بابنِ آدَمَ وَلِلْمُلَكِ لَمَّةً فَأَمَّا لَمَّةُ الشَّيْطَانِ فَإِيعَادٌ بالشَّرِّ وَتَكْذِيبٌ بِالْحَقِّ، وَأَمَّا لَمَّةُ المَلَكِ فَإِيعَادٌ بالْخَيْرِ وَتَصْدِيقٌ بالْحَقِّ، فَمَنْ وَجَدَ ذَلِكَ فَلْيَعْلَمْ أَنَّهُ مِنَ الله فَلْيَحْمَدِ الله، وَمَنْ وَجَدَ الأخْرَى فَلْيَتَعَوَّذْ بالله مِنَ الشَّيْطَانِ الرجيم ثمَّ قَرَأَ: ( الشَّيْطَانُ يَعِدُكُمُ الفَقْرَ، وَيَأْمُرُكُمْ بِالْفَحْشَاءِ)</p><p id="2cd07523-47fb-4216-b700-a5cba1c37bab" class=""><em>Dari ‘Abdullâh bin Mas’ûd Radhiyallahu anhu, dia berkata: Rasûlullâh </em>ﷺ <em>bersabda: “Sesungguhnya setan memiliki bisikan pada manusia, malaikat juga memiliki bisikan. Bisikan setan menjanjikan keburukan dan mendustakan kebenaran. Sedangkan bisikan malaikat menjanjikan kebaikan dan mempercayai kebenaran. Barangsiapa mendapatkannya, maka ketahuilah bahwa itu dari Allah ‘Azza wa Jalla, kemudian hendaklah dia memuji Allah ‘Azza wa Jalla. Dan barangsiapa mendapatkan yang lain, maka hendaklah dia berlindung kepada Allah ‘Azza wa Jalla dari setan yang dilaknat”. Kemudian Nabi Shallallahu ‘alaihi wa sallam membaca ayat:</em></p><p id="2054ec51-4f2b-43d1-95bb-f5883ccc2164" class="">الشَّيْطَانُ يَعِدُكُمُ الْفَقْرَ وَيَأْمُرُكُم بِالْفَحْشَآءِ</p><p id="48e03479-8742-4b89-8552-eae6a2216dbf" class=""><em>Setan menjanjikan (menakut-nakuti) kamu dengan kemiskinan dan menyuruh kamu berbuat kejahatan (kikir) </em>(Al-Baqarah 2: 268) [HR. Tirmidzi, no. 2988, dishahîhkan oleh syaikh al-Albâni]</p><p id="e7a6cf82-f99b-4a36-beb7-f2cb0a92e390" class="">
+</p></li></ul><h2 id="d616e5be-1141-49b7-ba0e-0cd301e6dd8c" class=""><em>Pengamalan</em></h2><ol id="26bab9ea-2606-45f4-b60e-025115417616" class="numbered-list" start="1"><li>Membiasakan dan merutinkan membaca isti’adzah pada tempat dan waktu yang telah dikemukakan di atas.</li></ol><ol id="38792733-8abf-47cf-811e-f21c66880622" class="numbered-list" start="2"><li>Selalu merasa waspada akan gangguan, ancaman, dan bisikan dari setan kapan pun dan dimana pun.</li></ol><p id="4ff4ec09-7451-4160-a339-fe6f9504b091" class="">
+</p><p id="e3914c3f-9be5-49a9-8368-66f250f8ccc9" class="">
+</p><h3 id="a657bcf7-2d47-40e2-b19f-5f9124b22e38" class="">Referensi</h3><ul id="8c1ba522-622b-4292-8189-b124d07dc556" class="bulleted-list"><li>Tafsir Ath-Thabari Jilid 1 Surah Al Fatihah dan Al Baqarah</li></ul><ul id="def24529-e730-4b57-8eed-472d929ad799" class="bulleted-list"><li>Tafsir Al-Qurthubi Jilid 1 Surah Al Fatihah dan Al Baqarah</li></ul><ul id="82f189ae-1d22-49fc-b538-0c109148da79" class="bulleted-list"><li>Tafsir Ibnu Katsir Jilid 1 Surah Al Fatihah dan Al Baqarah</li></ul><ul id="2e4ff98f-dadc-4895-ac30-30323d59ad94" class="bulleted-list"><li><a href="https://bimbinganislam.com/kapan-istiadzah-itu-mulai-dibaca/">https://bimbinganislam.com/kapan-istiadzah-itu-mulai-dibaca/</a></li></ul><ul id="00b0302c-163f-458e-a03e-1f8bdf05d688" class="bulleted-list"><li><a href="https://rumaysho.com/2333-berkah-di-balik-doa-sebelum-hubungan-intim.html">https://rumaysho.com/2333-berkah-di-balik-doa-sebelum-hubungan-intim.html</a></li></ul></div></article></body></html>
